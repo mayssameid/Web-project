@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Leaderboard - Math Duel Arena</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container"><img src="clashofdigits.png" alt="logo" class="logo"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="player.html">Player Input</a></li>
+        <li><a href="arena.html">Game Arena</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="leaderboard">
+      <h2>Leaderboard</h2>
+
+      <div class="lb-controls forum-new" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <form id="lb-form" style="display:flex;gap:8px;align-items:center;">
+          <input id="lb-name" placeholder="Player name" required>
+          <input id="lb-score" type="number" placeholder="Score" required min="0" style="width:110px;">
+          <button class="primary-action" type="submit">Add</button>
+        </form>
+
+        <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
+          <button id="sample-btn" class="primary-action">Add Samples</button>
+          <button id="export-btn" class="primary-action">Export</button>
+          <input id="import-file" type="file" accept="application/json" style="display:none;">
+          <button id="import-btn" class="primary-action">Import</button>
+          <button id="clear-btn" style="background:#333; color:#fff; padding:8px 10px; border-radius:8px;">Clear</button>
+        </div>
+      </div>
+
+      <div class="forum-list" style="margin-top:14px;">
+        <table id="leaderboard-table" style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr style="text-align:left; color:rgba(223,248,249,0.8);">
+              <th style="padding:10px">Rank</th>
+              <th style="padding:10px">Player</th>
+              <th style="padding:10px">Score</th>
+              <th style="padding:10px">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-list"></tbody>
+        </table>
+      </div>
+
+      <p class="small-muted" style="margin-top:12px;">Leaderboard is stored locally in your browser (localStorage).</p>
+    </section>
+  </main>
+
+  <script src="leaderboard.js"></script>
+</body>
+</html>

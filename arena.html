@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arena - Math Duel Arena</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* small arena-specific tweaks */
+    .arena { max-width:960px; margin:28px auto; padding:22px; background:rgba(10,14,28,0.6); border-radius:12px; }
+    .players { display:flex; gap:16px; justify-content:space-between; margin-bottom:18px; }
+    .player { flex:1; padding:14px; border-radius:10px; background:linear-gradient(180deg, rgba(16,22,36,0.45), rgba(18,28,48,0.6)); text-align:center; }
+    .player h4 { margin:6px 0 4px; color:#0fcece; font-family: 'Orbitron', Arial, sans-serif; }
+    .score { font-size:1.6rem; color:#e94560; font-weight:700; }
+    .center { text-align:center; }
+    .question { font-size:1.6rem; margin:18px 0; color:#dff8f9; }
+    .controls { display:flex; gap:8px; justify-content:center; margin-top:12px; }
+    input[type="number"] { padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.02); color:#eef9fa; width:140px; text-align:center; }
+    .small-muted { color:rgba(223,248,249,0.7); font-size:0.9rem; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container"><img src="clashofdigits.png" alt="logo" class="logo"></div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="player.html">Player Input</a></li>
+        <li><a href="arena.html" class="active">Game Arena</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="arena">
+      <div class="players" id="players-row">
+        <div class="mode-toggle">
+          <label><input type="radio" name="mode" value="single" checked> Single</label>
+          <label><input type="radio" name="mode" value="multi"> Multiplayer</label>
+        </div>
+
+        <div class="player-wrap">
+          <input type="radio" name="active" id="active-p1" checked>
+          <label for="active-p1" class="player" id="player1-card">
+            <h4 id="p1-name">Player 1</h4>
+            <div class="score" id="p1-score">0</div>
+            <div class="small-muted" id="p1-info">Ready</div>
+          </label>
+
+          <input type="radio" name="active" id="active-p2">
+          <label for="active-p2" class="player" id="player2-card">
+            <h4 id="p2-name">Player 2</h4>
+            <div class="score" id="p2-score">0</div>
+            <div class="small-muted" id="p2-info">Ready</div>
+          </label>
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="question" id="question">Press "Start Round" to begin</div>
+
+        <div class="controls">
+          <input id="answer" type="number" aria-label="Your answer" placeholder="Your answer">
+          <button id="submit-answer" class="primary-action">Submit</button>
+          <button id="next-btn" class="primary-action" style="display:none">Next</button>
+        </div>
+
+        <div class="controls" style="margin-top:16px;">
+          <button id="start-btn" class="primary-action">Start Round</button>
+          <button id="reset-btn" class="primary-action" style="background:#0f6fe0">Reset Scores</button>
+        </div>
+
+        <div class="small-muted" id="round-info" style="margin-top:12px"></div>
+      </div>
+    </section>
+  </main>
+    
+
+</body>
+</html>

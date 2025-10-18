@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feedback Forum - Clash of Digits</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/3.0.3/jquery.rateyo.min.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="clashofdigits.png" alt="Logo" class="logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="player.html">Player Input</a></li>
+        <li><a href="arena.html">Game Arena</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="feedback-page">
+      <h2>Feedback Forum</h2>
+      <p class="muted">Required fields marked with <strong>*</strong>.</p>
+
+      <div id="feedback-list" class="forum-list" aria-live="polite"> </div>
+      <div class="forum-new" style="margin-top:24px;">
+        <h3>Don't be shy, let us know your thoughts!</h3>
+
+        <form id="feedback-form" class="feedback-form" novalidate>
+          <label for="fb-name">Player's Name <span class="req">*</span></label>
+          <input id="fb-name" name="name" type="text" required placeholder="Your name">
+
+          <label for="fb-email">Email <span class="req">*</span></label>
+          <input id="fb-email" name="email" type="email" required placeholder="you@example.com">
+
+          <label>How would you rate your overall experience with the game? <span class="req">*</span></label>
+          <div class="rating-radios" role="radiogroup" aria-label="Overall rating">
+          <label><input type="radio" name="rating" value="1"> 1 <span class="r-desc">Very Poor</span></label>
+          <label><input type="radio" name="rating" value="2"> 2 <span class="r-desc">Poor</span></label>
+          <label><input type="radio" name="rating" value="3"> 3 <span class="r-desc">Average</span></label>
+          <label><input type="radio" name="rating" value="4"> 4 <span class="r-desc">Good</span></label>
+          <label><input type="radio" name="rating" value="5"> 5 <span class="r-desc">Excellent</span></label>
+          </div>
+
+          <label for="fb-like">What do you like the most about the game?</label>
+          <textarea id="fb-like" name="like" rows="3" placeholder="What stood out?"></textarea>
+
+          <label for="fb-dislike">What did you dislike or find frustrating?</label>
+          <textarea id="fb-dislike" name="dislike" rows="3" placeholder="What should be improved?"></textarea>
+
+          <label for="fb-features">What new features would you like to see?</label>
+          <textarea id="fb-features" name="features" rows="3" placeholder="Ideas for new features..."></textarea>
+
+          <fieldset class="field-opts" style="margin-top:12px;">
+            <legend>What kind of challenges or content would you like to see in future updates?</legend>
+            <label><input type="checkbox" name="challenges" value="new-levels"> New levels</label>
+            <label><input type="checkbox" name="challenges" value="more-difficulty"> More difficulty settings</label>
+            <label><input type="checkbox" name="challenges" value="tournaments"> Multiplayer tournaments</label>
+            <label><input type="checkbox" name="challenges" value="new-modes"> New game modes (time trial, daily challenges)</label>
+            <label>Other: <input type="text" id="challenges-other" name="challenges-other" placeholder="Other suggestions"></label>
+          </fieldset>
+
+          <label for="fb-additional" style="margin-top:12px;">Additional feedback</label>
+          <textarea id="fb-additional" name="additional" rows="4" placeholder="Any extra comments (optional)"></textarea>
+
+          <div class="feedback-actions" style="margin-top:12px;">
+            <button type="submit" class="primary-action">Submit Feedback</button>
+            <span id="fb-status" class="fb-status" aria-live="polite"></span>
+          </div>
+
+          <p id="thank-you" style="display:none; margin-top:12px; color:#cfeff0;">
+            Thank you for sharing your thoughts! We really appreciate your feedback and will use it to improve the game.
+          </p>
+        </form>
+      </div>
+      <section class="testimonials" id="player-testimonials" style="margin-top:28px;">
+        <h3 style="font-family:'Orbitron', Arial, sans-serif; color:#e94560;">What our players say</h3>
+        <div id="testimonials-list" class="testimonials-list">
+          <!-- JS will inject recent short testimonials here -->
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- jQuery + RateYo -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/3.0.3/jquery.rateyo.min.js"></script>
+
+  <!-- single JS file for interactions -->
+  <script src="functionality.js"></script>
+</body>
+</html>

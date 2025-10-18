@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Input - Math Duel Arena</title>
+  <link rel="stylesheet" href="styles.css"> <!-- External CSS for styling -->
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="clashofdigits.png" alt="Logo" class="logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="player.html" class="active">Player Input</a></li>
+        <li><a href="arena.html">Game Arena</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="player-input">
+      <h2>Enter Your Details</h2>
+
+      <!-- Player 1 Name Input -->
+       <label for="player1">Player 1 Name</label>
+       <input id="player1" type="text" placeholder="Player 1" required>
+
+      <!-- Player 2 Name Input (for multiplayer) -->
+      <div class="multiplayer" id="player2-section">
+        <label for="player2">Player 2 Name</label>
+        <input id="player2" type="text" placeholder="Player 2">
+      </div>
+
+      <!-- Game Mode Selection -->
+      <div class="input-group">
+        <label><input type="radio" name="game-mode" value="single-player" checked> Single Player</label>
+        <label><input type="radio" name="game-mode" value="multiplayer"> Multiplayer</label>
+      </div>
+
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="moderate">Moderate</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button class="primary-action" onclick="startGame()">Start Game</button>
+    </div>
+  </main>
+
+    <script src="functionality.js"></script>
+</body>
+</html>
+
+  <footer>
+    <p>&copy; 2025 Math Duel Arena. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script> <!-- External JavaScript file -->
+</body>
+</html>
